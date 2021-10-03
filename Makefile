@@ -1,7 +1,7 @@
 default: clean install copy zip
 
 install: build_path
-	pip3 install -r requirements.txt -t build
+	pip install -r requirements.txt -t build
 
 build_path:
 	mkdir build
