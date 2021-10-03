@@ -10,7 +10,7 @@ env:
     - PYTHONPATH=$TRAVIS_BUILD_DIR:$PYTHONPATH
 
 before_install:
-  - nvm install 6
+  - nvm install v12.18.3
 
 install:
   - npm install -g serverless
