@@ -1,20 +1,21 @@
 default: clean install copy zip
 
-install: build_path
-	pip install -r requirements.txt -t build
+clean:
+	rm -rf build
+	rm -rf dist
 
 build_path:
 	mkdir build
 
-build_dist:
-	mkdir dist
+install: build_path
+	pip3 install -r requirements.txt -t build
 
 copy:
 	cp -R lib/* build/
 
+build_dist:
+	mkdir dist
+
 zip: build_dist
 	cd build && zip -r ../dist/lambda.zip .
 
-clean:
-	rm -rf build
-	rm -rf dist
