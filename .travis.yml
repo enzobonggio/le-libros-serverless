@@ -4,21 +4,20 @@ python: '3.6'
 os: linux
 dist: xenial
 
-branches:
-  only:
-    - master
-
 env:
   global:
     - AWS_DEFAULT_REGION=us-west-2
     - PYTHONPATH=$TRAVIS_BUILD_DIR:$PYTHONPATH
 
+before_install:
+  - nvm install 6
+
 install:
+  - npm install -g serverless
   - pip3 install -r requirements.txt
 
 script:
-  - py.test -vv -r sxX
-
+  - coverage run -m pytest -vv -r sxX
 
 before_deploy:
   - make
@@ -26,14 +25,6 @@ before_deploy:
   - cp dist/latest.zip dist/$TRAVIS_COMMIT.zip
 
 deploy:
-  provider: s3
-  access_key_id: $AWS_ACCESS_KEY_ID
-  secret_access_key: $AWS_SECRET_ACCESS_KEY
-  bucket: $AWS_BUCKET
-  region: $AWS_BUCKET_REGION
-  local_dir: dist
-  upload_dir: deployments/lambdas/your_lambda
-  acl: private
-  skip_cleanup: true
-  on:
-    all_branches: true
+  provider: script
+  script: serverless deploy --region=us-west-2
+

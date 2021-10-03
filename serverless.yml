@@ -8,7 +8,7 @@ package:
   artifact: dist/lambda.zip
 
 functions:
-  categories:
-    handler: leilibros.fetch_categories
   books:
-    handler: leilibros.fetch_books_by_category
+    handler: books.fetch_books_by_category.lambda_handler
+  categories:
+    handler: categories.fetch_categories.lambda_handler
