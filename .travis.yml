@@ -1,7 +1,12 @@
 language: python
 
 python: '3.6'
-sudo: false
+os: linux
+dist: xenial
+
+branches:
+  only:
+    - master
 
 env:
   global:
@@ -17,14 +22,13 @@ before_deploy:
   - cp dist/latest.zip dist/$TRAVIS_COMMIT.zip
 
 deploy:
-  provider:          s3
-  access_key_id:     $AWS_ACCESS_KEY_ID
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_ACCESS_KEY
-  bucket:            $AWS_BUCKET
-  region:            $AWS_BUCKET_REGION
-  local_dir:         dist
-  upload-dir:        deployments/lambdas/your_lambda
-  acl:               private
-  skip_cleanup:      true
+  bucket: $AWS_BUCKET
+  region: $AWS_BUCKET_REGION
+  local_dir: dist
+  upload_dir: deployments/lambdas/your_lambda
+  acl: private
   on:
     all_branches: true
