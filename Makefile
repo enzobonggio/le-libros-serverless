@@ -11,7 +11,7 @@ install: build_path
 	pip3 install -r requirements.txt -t build
 
 copy:
-	cp -R lib/* build/
+	cp -R src/* build/
 
 build_dist:
 	mkdir dist

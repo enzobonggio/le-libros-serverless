@@ -4,7 +4,7 @@ from pathlib import Path
 
 from httmock import urlmatch, HTTMock
 
-from books.fetch_books_by_category import lambda_handler
+from src.categories.fetch_categories import lambda_handler
 
 
 @urlmatch(netloc='https://lelibros.online/')
