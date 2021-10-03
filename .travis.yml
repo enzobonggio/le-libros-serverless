@@ -26,6 +26,6 @@ before_deploy:
 
 deploy:
   provider: script
-  script: serverless deploy --region=us-west-2
+  script: serverless deploy --region=us-west-2 --package=dist/$TRAVIS_COMMIT.zip
   skip_cleanup: true
 

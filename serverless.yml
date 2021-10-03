@@ -4,9 +4,6 @@ provider:
   name: aws
   runtime: python3.6
 
-package:
-  artifact: dist/lambda.zip
-
 functions:
   books:
     handler: books.fetch_books_by_category.lambda_handler
