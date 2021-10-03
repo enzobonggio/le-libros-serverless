@@ -34,6 +34,6 @@ deploy:
   local_dir: dist
   upload_dir: deployments/lambdas/your_lambda
   acl: private
-  cleanup: true
+  cleanup: false
   on:
     all_branches: true
