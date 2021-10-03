@@ -1,0 +1,14 @@
+service: leilibros
+
+provider:
+  name: aws
+  runtime: python3.6
+
+package:
+  artifact: package.zip
+
+functions:
+  categories:
+    handler: leilibros.fetch_categories
+  books:
+    handler: leilibros.fetch_books_by_category
