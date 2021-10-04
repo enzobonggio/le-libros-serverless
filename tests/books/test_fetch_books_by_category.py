@@ -21,7 +21,7 @@ class FetchTest(unittest.TestCase):
                 {
                     'queryStringParameters':
                         {
-                            'category_href': 'categoria/aventura/'
+                            'category': 'aventura'
                         }
                 }
                 , None)
