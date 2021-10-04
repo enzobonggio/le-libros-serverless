@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import json
 import unittest
 from pathlib import Path
 
@@ -16,11 +17,18 @@ class FetchTest(unittest.TestCase):
 
     def test_fetch(self):
         with HTTMock(lelibros_mock):
-            response = lambda_handler({'category_href': 'categoria/aventura/'}, None)
+            response = lambda_handler(
+                {
+                    'queryStringParameters':
+                        {
+                            'category_href': 'categoria/aventura/'
+                        }
+                }
+                , None)
         if response is None:
             self.fail()
         self.assertEqual(response['statusCode'], 200)
-        body = response['body']
+        body = json.loads(response['body'])
         metadata = body['_metadata']
         records = body['records']
         self.assertEqual(metadata['page'], 1)

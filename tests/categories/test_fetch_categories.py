@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import json
 import unittest
 from pathlib import Path
 
@@ -20,8 +21,9 @@ class FetchTest(unittest.TestCase):
         if response is None:
             self.fail()
         self.assertEqual(response['statusCode'], 200)
+        body = json.loads(response['body'])
         self.assertEqual(
-            list(map(lambda category: category['title'], response['body'])),
+            list(map(lambda category: category['title'], body)),
             ['Aventura',
              'Biografías y Memorias',
              'Ciencia-Ficción',
