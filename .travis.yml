@@ -26,4 +26,6 @@ deploy:
   provider: script
   script: serverless deploy --region=us-west-2
   skip_cleanup: true
+  on:
+    branch: master
 

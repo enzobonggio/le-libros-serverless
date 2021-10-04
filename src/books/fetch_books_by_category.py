@@ -1,11 +1,14 @@
+import json
+
 import requests
 from bs4 import BeautifulSoup
 
 
 def lambda_handler(event, context):
-    category_href = event['category_href']
-    pageNumber = event.get('page') or 1
-    url = "https://lelibros.online/" + category_href
+    category_href = event['queryStringParameters']['category_href']
+    pageNumber = event['queryStringParameters'].get('page') or 1
+    pageNumberHref = 'page/' + pageNumber + '/' if pageNumber > 1 else ''
+    url = "https://lelibros.online/" + category_href + pageNumberHref
     page = requests.get(url)
     content = BeautifulSoup(page.content, 'html.parser')
     raw_books = content.select('.list-books>ul>li>a:first-child')
@@ -14,7 +17,7 @@ def lambda_handler(event, context):
 
     return {
         'statusCode': 200,
-        'body': {
+        'body': json.dumps({
             '_metadata':
                 {
                     "page": pageNumber,
@@ -22,7 +25,7 @@ def lambda_handler(event, context):
                     "page_count": last_page
                 },
             'records': books
-        }
+        })
     }
 
 

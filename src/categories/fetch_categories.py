@@ -1,3 +1,5 @@
+import json
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -11,5 +13,5 @@ def lambda_handler(event, context):
     categories = map(lambda tag: {'href': tag.attrs['href'], 'title': tag.text}, rawCategories)
     return {
         'statusCode': 200,
-        'body': list(categories)
+        'body': json.dump(list(categories))
     }
