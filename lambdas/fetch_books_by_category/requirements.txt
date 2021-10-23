@@ -1,0 +1,8 @@
+requests
+bs4
+beautifulsoup4
+httmock
+coverage
+../../packages/common_schemas
+../../packages/logic
+../../packages/adapters

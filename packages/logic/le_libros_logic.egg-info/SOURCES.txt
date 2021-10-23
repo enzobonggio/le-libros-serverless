@@ -1,0 +1,8 @@
+setup.py
+le_libros_logic.egg-info/PKG-INFO
+le_libros_logic.egg-info/SOURCES.txt
+le_libros_logic.egg-info/dependency_links.txt
+le_libros_logic.egg-info/top_level.txt
+logic/__init__.py
+logic/href.py
+logic/properties.py

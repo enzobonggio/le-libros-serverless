@@ -1,0 +1,8 @@
+requests~=2.26.0
+bs4~=0.0.1
+beautifulsoup4~=4.10.0
+httmock~=1.4.0
+coverage
+../../packages/common_schemas
+../../packages/logic
+../../packages/adapters

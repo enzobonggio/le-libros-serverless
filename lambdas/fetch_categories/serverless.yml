@@ -1,0 +1,12 @@
+service: le-libros
+
+provider:
+  name: aws
+  runtime: python3.6
+
+package:
+  artifact: dist/lambda.zip
+
+functions:
+  categories:
+    handler: services.fetch_books_by_category_lambda_handler
