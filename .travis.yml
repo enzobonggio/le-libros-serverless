@@ -13,7 +13,7 @@ before_install:
   - ./ecr_credentials.sh
 
 install:
-  - pip3 install -g awscli
+  - pip3 install awscli
   - pip3 install codecov
   - pip3 install -r requirements.txt
 
