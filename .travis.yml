@@ -15,8 +15,11 @@ before_install:
 install:
   - pip3 install -r requirements_travis.txt
 
+script:
+  - make test
+
 before_deploy:
-  - make
+  - make install
 
 deploy:
   - provider: script

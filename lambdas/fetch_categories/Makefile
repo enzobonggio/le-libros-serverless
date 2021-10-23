@@ -1,17 +1,20 @@
-default: clean install test copy zip
+install: clean install_requirements copy zip
+test: requirements coverage
 
 clean:
 	rm -rf build
 	rm -rf dist
-	rm -f .coverage
 
 build_path:
 	mkdir build
 
-install: build_path
+install_requirements: build_path
 	pip3 install -r requirements.txt -t build
 
-test:
+requirements:
+	pip3 install -r requirements.txt
+
+coverage:
 	coverage run -m pytest
 
 copy:
