@@ -10,7 +10,7 @@ env:
 
 before_install:
   - nvm install v12.18.3
-  - ./ecr_credentials.sh
+  - ./scripts/ecr_credentials.sh
 
 install:
   - pip3 install -r requirements_travis.txt
@@ -22,22 +22,22 @@ script:
   - coverage run -m pytest lambdas/fetch_categories
   - coverage run -a -m pytest lambdas/fetch_books_by_category
 
+after_success:
+  - codecov
+
 before_deploy:
   - make install
 
 deploy:
   - provider: script
     name: "Deploy fetch_categories"
-    script: aws lambda update-function-code --function-name le_libros_fetch_categories --zip-file fileb://lambdas/fetch_categories/dist/lambda.zip
+    script: ./scripts/deploy.sh fetch_categories
     skip_cleanup: true
     on:
       branch: master
   - provider: script
     name: "Deploy fetch_books_by_category"
-    script: aws lambda update-function-code --function-name le_libros_fetch_books_by_category --zip-file fileb://lambdas/fetch_books_by_category/dist/lambda.zip
+    script: ./scripts/deploy.sh fetch_categories
     skip_cleanup: true
     on:
       branch: master
-
-after_deploy:
-  - codecov
