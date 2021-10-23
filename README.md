@@ -1,2 +1,2 @@
-# le-libros-serverless [![Build Status](https://app.travis-ci.com/enzobonggio/le-libros-serverless.svg?branch=master)](https://app.travis-ci.com/enzobonggio/le-libros-serverless)
+# le-libros-serverless [![Build Status](https://app.travis-ci.com/enzobonggio/le-libros-serverless.svg?branch=master)](https://app.travis-ci.com/enzobonggio/le-libros-serverless) [![codecov](https://codecov.io/gh/enzobonggio/le-libros-serverless/branch/master/graph/badge.svg?token=T8DUA42QI8)](https://codecov.io/gh/enzobonggio/le-libros-serverless)
 AWS lambda integration for  https://lelibros.online
