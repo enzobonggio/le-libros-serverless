@@ -32,6 +32,12 @@ deploy:
     skip_cleanup: true
     on:
       branch: master
+  - provider: script
+    name: "Deploy fetch_books_by_category"
+    script: aws lambda update-function-code --function-name le_libros_fetch_books_by_category --zip-file fileb://lambdas/fetch_books_by_category/dist/lambda.zip
+    skip_cleanup: true
+    on:
+      branch: master
 
 after_deploy:
   - codecov
