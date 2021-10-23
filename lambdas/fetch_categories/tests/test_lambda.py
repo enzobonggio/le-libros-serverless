@@ -5,7 +5,7 @@ from pathlib import Path
 
 from httmock import urlmatch, HTTMock
 
-from fetch_categories.service import fetch_categories_lambda_handler
+from fetch_categories.service import lambda_handler
 
 
 @urlmatch(netloc='https://lelibros.online/')
@@ -17,7 +17,7 @@ class TestCategoriesLambda(unittest.TestCase):
 
     def test_fetch_categories_lambda_handler(self):
         with HTTMock(lelibros_mock):
-            response = fetch_categories_lambda_handler(None, None)
+            response = lambda_handler(None, None)
         if response is None:
             self.fail()
         self.assertEqual(response['statusCode'], 200)

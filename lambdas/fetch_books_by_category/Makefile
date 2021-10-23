@@ -1,8 +1,9 @@
-default: clean install copy zip
+default: clean install test copy zip
 
 clean:
 	rm -rf build
 	rm -rf dist
+	rm -f .coverage
 
 build_path:
 	mkdir build
@@ -10,8 +11,12 @@ build_path:
 install: build_path
 	pip3 install -r requirements.txt -t build
 
+test:
+	coverage run -m pytest
+
 copy:
 	cp -R fetch_books_by_category build/
+	cp -R resources build/
 
 build_dist:
 	mkdir dist

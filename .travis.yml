@@ -6,26 +6,28 @@ dist: xenial
 
 env:
   global:
-    - AWS_DEFAULT_REGION=us-east-1
     - PYTHONPATH=$TRAVIS_BUILD_DIR:$PYTHONPATH
 
 before_install:
   - nvm install v12.18.3
+  - ./ecr_credentials.sh
 
 install:
-  - npm install -g serverless
+  - pip3 install -g awscli
+  - pip3 install codecov
   - pip3 install -r requirements.txt
-
-script:
-  - coverage run -m pytest -vv -r sxX
 
 before_deploy:
   - make
 
 deploy:
-  provider: script
-  script: serverless deploy --region=us-east-1
-  skip_cleanup: true
-  on:
-    branch: master
+  - provider: script
+    name: "Deploy fetch_categories"
+    script: aws lambda update-function-code --function-name le_libros_fetch_categories --zip-file fileb://lambdas/fetch_categories/dist/lambda.zip
+    skip_cleanup: true
+    on:
+      branch: master
 
+after_deploy:
+  - codecov --file=lambdas/fetch_categories/.coverage
+  - codecov --file=lambdas/fetch_books_by_category/.coverage

@@ -1,21 +1,7 @@
-default: clean install copy zip
+default: make_fetch_categories make_fetch_books_by_category
 
-clean:
-	rm -rf build
-	rm -rf dist
+make_fetch_categories:
+	cd lambdas/fetch_categories && make
 
-build_path:
-	mkdir build
-
-install: build_path
-	pip3 install -r requirements.txt -t build
-
-copy:
-	cp -R src/* build/
-
-build_dist:
-	mkdir dist
-
-zip: build_dist
-	cd build && zip -r ../dist/lambda.zip .
-
+make_fetch_books_by_category:
+	cd lambdas/fetch_books_by_category && make

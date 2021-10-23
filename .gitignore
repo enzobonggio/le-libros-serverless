@@ -6,3 +6,4 @@ dist/lambda.zip
 # coverage
 .coverage
 htmlcov/
+.DS_Store
