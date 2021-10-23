@@ -13,9 +13,7 @@ before_install:
   - ./ecr_credentials.sh
 
 install:
-  - pip3 install awscli
-  - pip3 install codecov
-  - pip3 install -r requirements.txt
+  - pip3 install -r requirements_travis.txt
 
 before_deploy:
   - make
