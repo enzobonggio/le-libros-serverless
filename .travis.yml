@@ -15,8 +15,12 @@ before_install:
 install:
   - pip3 install -r requirements_travis.txt
 
+before_script:
+  - make requirements
+
 script:
-  - make test
+  - coverage run -m pytest lambdas/fetch_categories
+  - coverage run -a -m pytest lambdas/fetch_books_by_category
 
 before_deploy:
   - make install
@@ -30,5 +34,4 @@ deploy:
       branch: master
 
 after_deploy:
-  - codecov --file=lambdas/fetch_categories/.coverage
-  - codecov --file=lambdas/fetch_books_by_category/.coverage
+  - codecov
