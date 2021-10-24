@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lambdas/fetch_books_by_category/.idea/fetch_books_by_category.iml" filepath="$PROJECT_DIR$/lambdas/fetch_books_by_category/.idea/fetch_books_by_category.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lambdas/fetch_categories/.idea/fetch_categories.iml" filepath="$PROJECT_DIR$/lambdas/fetch_categories/.idea/fetch_categories.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lambdas/fetch_recent_published_books/.idea/fetch_recent_published_books.iml" filepath="$PROJECT_DIR$/lambdas/fetch_recent_published_books/.idea/fetch_recent_published_books.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/le-libros-serverless.iml" filepath="$PROJECT_DIR$/.idea/le-libros-serverless.iml" />
+    </modules>
+  </component>
+</project>

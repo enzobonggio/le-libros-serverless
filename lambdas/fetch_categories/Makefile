@@ -1,5 +1,4 @@
-install: clean install_requirements_build copy zip
-requirements: install_requirements
+install: clean install_requirements copy zip
 
 clean:
 	rm -rf build
@@ -8,11 +7,8 @@ clean:
 build_path:
 	mkdir build
 
-install_requirements_build: build_path
+install_requirements: build_path
 	pip3 install -r requirements.txt -t build
-
-install_requirements:
-	pip3 install -r requirements.txt
 
 copy:
 	cp -R fetch_categories build/

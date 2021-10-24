@@ -27,13 +27,13 @@ class TestBooksLambda(unittest.TestCase):
             response = lambda_handler(test_event, None)
         if response is None:
             self.fail()
-        self.assertEqual(response['statusCode'], 200)
+        self.assertEqual(200, response['statusCode'])
         body = json.loads(response['body'])
         metadata = body['metadata']
         records = body['records']
-        self.assertEqual(metadata['page'], 1)
-        self.assertEqual(metadata['per_page'], 12)
-        self.assertEqual(metadata['page_count'], 10)
+        self.assertEqual(1, metadata['page'])
+        self.assertEqual(12, metadata['per_page'])
+        self.assertEqual(10, metadata['page_count'])
         self.assertEqual(
             ['El Vizconde de Bragelonne',
              'El Trono del Lobo Gris',

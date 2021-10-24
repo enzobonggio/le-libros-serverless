@@ -11,7 +11,7 @@ install_requirements: build_path
 	pip3 install -r requirements.txt -t build
 
 copy:
-	cp -R fetch_books_by_category build/
+	cp -R fetch_recent_published_books build/
 	cp -R resources build/
 
 build_dist:

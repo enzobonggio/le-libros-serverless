@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebResourcesPaths">
+    <contentEntries>
+      <entry url="file://$PROJECT_DIR$/lambdas/fetch_books_by_category">
+        <entryData>
+          <resourceRoots>
+            <path value="file://$PROJECT_DIR$/lambdas/fetch_books_by_category/resources" />
+          </resourceRoots>
+        </entryData>
+      </entry>
+      <entry url="file://$PROJECT_DIR$/lambdas/fetch_categories">
+        <entryData>
+          <resourceRoots>
+            <path value="file://$PROJECT_DIR$/lambdas/fetch_categories/resources" />
+          </resourceRoots>
+        </entryData>
+      </entry>
+    </contentEntries>
+  </component>
+</project>

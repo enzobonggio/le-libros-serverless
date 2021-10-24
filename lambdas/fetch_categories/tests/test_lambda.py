@@ -20,7 +20,7 @@ class TestCategoriesLambda(unittest.TestCase):
             response = lambda_handler(None, None)
         if response is None:
             self.fail()
-        self.assertEqual(response['statusCode'], 200)
+        self.assertEqual(200, response['statusCode'])
         body = json.loads(response['body'])
         self.assertEqual(
             ['Aventura',
