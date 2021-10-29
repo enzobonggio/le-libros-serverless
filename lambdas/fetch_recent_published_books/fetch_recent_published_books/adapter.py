@@ -8,7 +8,7 @@ def tag_to_book(tag) -> FetchBooksRecord:
     return FetchBooksRecord(
         code=code_from_href(tag.attrs['href']),
         title=tag.attrs['title'],
-        image=tag.select_one('amp-img').attrs['src']
+        image='https://lelibros.online' + tag.select_one('amp-img').attrs['src']
     )
 
 
