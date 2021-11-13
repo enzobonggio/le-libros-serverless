@@ -1,4 +1,4 @@
-from schemas.http_response import Response
+from common_schemas.http_response import Response
 
 
 class BookDetails:
