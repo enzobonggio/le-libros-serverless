@@ -7,7 +7,7 @@ deploy() {
   echo "Deployed $lambda_name"
 }
 
-local i=0
+i=0
 for lambda_path in lambdas/* ; do
     deploy $lambda_path &
     pids[$i]=$!
