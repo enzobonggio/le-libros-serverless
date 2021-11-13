@@ -1,8 +1,0 @@
-setup.py
-common_schemas/__init__.py
-common_schemas/http_response.py
-common_schemas/paginated_response.py
-le_libros_common_schemas.egg-info/PKG-INFO
-le_libros_common_schemas.egg-info/SOURCES.txt
-le_libros_common_schemas.egg-info/dependency_links.txt
-le_libros_common_schemas.egg-info/top_level.txt

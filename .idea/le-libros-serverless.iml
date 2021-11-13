@@ -9,6 +9,7 @@
     <orderEntry type="module" module-name="fetch_categories" />
     <orderEntry type="module" module-name="fetch_books_by_category" />
     <orderEntry type="module" module-name="fetch_recent_published_books" />
+    <orderEntry type="module" module-name="get_book_details" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />

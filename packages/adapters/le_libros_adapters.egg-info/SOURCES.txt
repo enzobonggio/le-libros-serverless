@@ -1,7 +1,0 @@
-setup.py
-adapters/__init__.py
-adapters/page.py
-le_libros_adapters.egg-info/PKG-INFO
-le_libros_adapters.egg-info/SOURCES.txt
-le_libros_adapters.egg-info/dependency_links.txt
-le_libros_adapters.egg-info/top_level.txt
